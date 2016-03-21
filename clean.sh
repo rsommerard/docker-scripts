@@ -4,10 +4,10 @@
 docker kill $(docker ps -q)
 
 # Delete all stopped containers (including data-only containers)
-docker rm $(docker ps -a -q)
+docker rm -f $(docker ps -a -q)
 
 # Delete all 'untagged/dangling' (<none>) images
-docker rmi $(docker images -q -f dangling=true)
+docker rmi -f $(docker images -q -f dangling=true)
 
 # Delete ALL images
-docker rmi $(docker images -q)
+docker rmi -f $(docker images -q)
