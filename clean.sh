@@ -11,3 +11,7 @@ docker rmi -f $(docker images -q -f dangling=true)
 
 # Delete ALL images
 docker rmi -f $(docker images -q)
+
+# Delete ALL volumes
+docker volume rm $(docker volume ls -qf dangling=true)
+
